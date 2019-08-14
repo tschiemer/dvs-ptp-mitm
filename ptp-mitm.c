@@ -27,54 +27,21 @@ int main(int argc, char *argv[], char *envp[])
 		}
 	}
 	
-	
-    //A null terminated array of character  
-    //pointers 
-//     char *args[]={
-//     "ptp.original"
-// 		"/Library/Application Support/Audinate/DanteVirtualSoundcard/ptp.original"
-// 		,"-args=/Library/Preferences/com.audinate.dante.ptp.args"
-// 		,"-y=-2"
-// 		,"-ts"
-// 		,"-th=127.0.0.1"
-// 		,"-tp=4444"
-// 		,"-tv=0x0102"
-// 		,"-to=0x8000"
-// 		,"-f=true"
-// 		,"-pullup=true"
-// 		,"-dynamic-srate-change=true"
-// 		,"-c=/Library/Preferences/com.audinate.dante.ptp.conf"
-// 		,"-g"
-// 		,"-ll=Warning"
-// 		,"-m=en7"
-// 		,"-cp=38900"
-// 		,"-kp=59589"
-// 		,"-kv=0x0102"
-// 		,"-ko=0x8000"
-// 		,"-kst=40476244607"
-// 		,"-kct=62"
-// 		, NULL
-// 	}; 
-	printf("%d %d\n", argc, argsc);
-	for (int i = 0; i < argsc; i++){
-		printf("%s ", args[i]);
-	}
-	printf("\n");
-	
+	// call actual ptp service
 	execve(args[0], args, envp); 
 	
-    
+	// should never reach here -> error case
+	
     printf("Error %d ", errno);
     switch(errno){
     	case EPERM: 	printf("Operation not permitted"); break;
     	case ENOENT: 	printf("No such file or directory"); break;
+    	// etc
     }
 
 	printf("\n");
 
 	free( args );
-
-// 	system("/Library/Application\\ Support/Audinate/DanteVirtualSoundcard/ptp.original -args=/Library/Preferences/com.audinate.dante.ptp.args -y=-2 -ts -th=127.0.0.1 -tp=4444 -tv=0x0102 -to=0x8000 -f=true -pullup=true -dynamic-srate-change=true -c=/Library/Preferences/com.audinate.dante.ptp.conf -g -ll=Warning -m=en7 -cp=38900 -kp=59589 -kv=0x0102 -ko=0x8000 -kst=40476244607 -kct=62");
 
 	return 0;
 
