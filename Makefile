@@ -3,7 +3,7 @@ DVSDIR?=/Library/Application\ Support/Audinate/DanteVirtualSoundcard
 
 h: help
 help:
-	@cat help.txt
+	@cat README.md
 
 b: build
 build: ptp-mitm.c
