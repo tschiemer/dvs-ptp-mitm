@@ -31,10 +31,10 @@
 	h|help		shows this help.txt
 	b|build		compiles code
 	c|clean		remove built code
+	dir		echo directory for manual intervention
 
- The following targets MIGHT require sudo, ex 'sudo make install'
+    The following targets require sudo, ex 'sudo make install'
 
 	install		sets up man-in-the-middle
 	uninstall	remove man-in-the-middle
-	dir		echo directory for manual intervention
 
