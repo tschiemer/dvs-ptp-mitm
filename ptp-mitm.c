@@ -4,8 +4,8 @@
 #include <string.h>
 #include <errno.h>
 
-// #define DISABLE_SLAVE_ONLY
-#define ENABLE_PTPV2
+// #define DISABLE_SLAVE_ONLY 		// Allow DVS to become leader
+// #define ENABLE_PTPV2 					// Enable PTPv2 support
 
 const char DvsPath[] = "/Library/Application Support/Audinate/DanteVirtualSoundcard/ptp-original";
 
