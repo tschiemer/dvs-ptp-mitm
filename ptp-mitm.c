@@ -19,7 +19,7 @@ int main(int argc, char *argv[], char *envp[])
 	argsc = argc+1;
 
 #ifdef ENABLE_PTPV2
-	// store m2 (ptpv2 interface) as used for ptpv1 (-m=)
+	// store m2 (ptpv2 interface) as used for ptpv1 (-m1=)
 	char m2[256] = "-m2=";
 	argsc += 2;
 #endif // ENABLE_PTPV2
@@ -39,8 +39,8 @@ int main(int argc, char *argv[], char *envp[])
 #endif //DISABLE_SLAVE_ONLY
 
 #ifdef ENABLE_PTPV2
-	 if (strncmp(argv[i],"-m=",3) == 0){
-		 strcpy(&m2[4], &argv[i][3]);
+	 if (strncmp(argv[i],"-m1=",4) == 0){
+		 strcpy(&m2[4], &argv[i][4]);
 	 }
 #endif //ENABLE_PTPV2
 
