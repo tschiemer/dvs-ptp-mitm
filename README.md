@@ -41,6 +41,7 @@
 
 # Installation notes
 
+## macOS
 
 Creating and using the installation script requires you to work on the terminal and to have the essential command line tools installed.
 
@@ -60,10 +61,23 @@ Creating and using the installation script requires you to work on the terminal 
 
 To simplify repeated installation (step 6) and uninstallation (step 7) you can also run the two automator apps `Activate / Deactivate DVS-PTP-MITM`.
 
+## Windows
+
+The makefile / scripts do not work, manual compilation and installation is required.
+
+If you have no other compiler at hand, you could use the mingw compiler for which you will find an installer here:
+
+https://github.com/Vuniverse0/mingwInstaller/releases/
+
+To compile, in command line (once changed to directory with `ptp-mitm.c` file) type the following command which should generate a `ptp-mitm.exe` file:
+
+`cc -o ptp-mitm ptp-mitm.c`
+
+Please remember to uncomment the desired options in the beginning of `ptp-mitm.c` before compilation.
 
 ## Manual Installation
 
-In DVS's application library (on macos `/Library/Application Support/Audinate/DanteVirtualSoundcard`) rename the original `ptp` file to `ptp-original` and copy the compiled `ptp-mitm` to in place of the old `ptp` binary.
+In DVS's application library (on macos `/Library/Application Support/Audinate/DanteVirtualSoundcard`, on windows `C:\Program Files\Audinate\Dante Virtual Soundcard`) rename the original `ptp` file to `ptp-original` and copy the compiled `ptp-mitm` to in place of the old `ptp` binary.
 
 
 
