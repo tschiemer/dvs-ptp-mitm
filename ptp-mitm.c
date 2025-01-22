@@ -101,9 +101,6 @@ int main(int argc, char *argv[], char *envp[])
 
 	free( args );
 
-	while (1){
-		sleep(1000);
-	}
 
 	return 0;
 
